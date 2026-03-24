@@ -1,0 +1,27 @@
+Timestamp,File,Type,Detected Behavior,Confidence
+2026-03-22 17:14:32,frame_hunting1.mp4_116.jpg,Image,Hunting,99.93%
+2026-03-23 15:25:09,[VIDEO] eating3.mp4,Video,Eating,100.00%
+2026-03-23 15:26:56,eating.jpeg,Image,Eating,99.84%
+2026-03-23 15:27:37,eating1.jpeg,Image,Walking,87.53%
+2026-03-24 12:20:28,sleeping.jpeg,Image,Sleeping,99.89%
+2026-03-24 12:20:37,sleeping.jpg,Image,Sleeping,99.47%
+2026-03-24 12:20:56,resting 1.jpg,Image,Resting,100.00%
+2026-03-24 12:21:05,resting 2.jpg,Image,Resting,99.88%
+2026-03-24 12:21:13,resting3.jpg,Image,Resting,99.98%
+2026-03-24 12:21:34,[VIDEO] restwatermark.mp4,Video,Resting,100.00%
+2026-03-24 12:30:24,frame_restwatermark.mp4_0.jpg,,Resting,99.99%
+2026-03-24 12:31:15,resting3.jpg,,Resting,99.98%
+2026-03-24 12:31:48,eating.jpeg,,Eating,99.84%
+2026-03-24 12:32:16,eating2.jpeg,,Eating,99.84%
+2026-03-24 12:32:58,eating1.jpeg,,Walking,87.53%
+2026-03-24 12:45:06,[VIDEO] videoplayback.mp4,,Processing...,0.00%
+2026-03-24 12:49:23,[VIDEO] wildlife video.mp4,,Processing...,0.00%
+2026-03-24 12:53:22,[VIDEO] wildlife video.mp4,Video,Sleeping,66.53%
+2026-03-24 12:55:55,[VIDEO] cheeta video.mp4,Video,Walking,59.79%
+2026-03-24 12:57:03,[VIDEO] cheeta video.mp4,Video,Walking,64.83%
+2026-03-24 12:58:49,frame_hunting1.mp4_29.jpg,,Hunting,99.95%
+2026-03-24 12:59:01,frame_hunting1.mp4_377.jpg,,Hunting,99.77%
+2026-03-24 12:59:13,frame_huntingv.mp4_0.jpg,,Hunting,99.93%
+2026-03-24 12:59:24,frame_huntingv.mp4_30.jpg,,Hunting,99.93%
+2026-03-24 12:59:35,hunting.jpeg,,Hunting,100.00%
+2026-03-24 12:59:43,[VIDEO] hunting1.mp4,,Processing...,0.00%
