@@ -1,17 +1,29 @@
-import streamlit as st
-import torch
-import torch.nn as nn
-from torchvision import models, transforms
-from PIL import Image
-import cv2
-import pandas as pd
 import os
 from datetime import datetime
+
 import matplotlib.pyplot as plt
+import pandas as pd
+import streamlit as st
+from PIL import Image
+
+st.set_page_config(page_title="Wildlife AI Dashboard", layout="wide")
+
+try:
+    import torch
+    import torch.nn as nn
+    from torchvision import models, transforms
+except ModuleNotFoundError as exc:
+    st.error(
+        "Missing a required dependency for the dashboard. "
+        "Make sure the app is deployed with the packages from requirements.txt."
+    )
+    st.exception(exc)
+    st.stop()
 
 # --- 1. SETTINGS & PATHS ---
-MODEL_PATH = r"C:\Users\Anusha\OneDrive\Desktop\Animal_AI\animals pics\wildlife_behavior_model.pth"
-HISTORY_FILE = "detection_history.csv"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "animals pics", "wildlife_behavior_model.pth")
+HISTORY_FILE = os.path.join(BASE_DIR, "detection_history.csv")
 CLASSES = ['Eating', 'Hunting', 'Resting', 'Sleeping', 'Walking']
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -20,16 +32,29 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def load_model():
     model = models.resnet50()
     model.fc = nn.Linear(model.fc.in_features, len(CLASSES))
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
     model.load_state_dict(torch.load(MODEL_PATH, map_location=DEVICE))
     model = model.to(DEVICE).eval()
     return model
 
-model = load_model()
-transform = transforms.Compose([
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
-])
+try:
+    model = load_model()
+except Exception as exc:
+    st.error(
+        "The model could not be loaded. Check that the .pth file is included in the repo "
+        "and that the path is correct on Streamlit Cloud."
+    )
+    st.exception(exc)
+    st.stop()
+
+transform = transforms.Compose(
+    [
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
+    ]
+)
 
 # --- 3. SMART HISTORY LOGIC ---
 def get_history():
@@ -61,7 +86,6 @@ def save_detection(filename, behavior, confidence):
     df.to_csv(HISTORY_FILE, index=False)
 
 # --- 4. STREAMLIT UI ---
-st.set_page_config(page_title="Wildlife AI Dashboard", layout="wide")
 st.title("🐾 Wildlife Behavior AI Command Center")
 
 tab1, tab2, tab3 = st.tabs(["🔍 Detection", "📊 Analytics", "📜 History"])
