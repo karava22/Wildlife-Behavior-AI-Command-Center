@@ -6,6 +6,9 @@ This project focuses on recognizing wildlife animal behavior in unstructured env
 ## 🚀 Live Demo  
 👉 https://wildlife-behavior-ai-command-center-6unzuzcrp2dcsjrrpgwzn7.streamlit.app/
 
+## 📂 GitHub Repository  
+👉 https://github.com/karava22/Wildlife-Behavior-AI-Command-Center
+
 ## 🎯 Features  
 - Automatic wildlife animal detection  
 - Behavior classification using CNN  
@@ -29,7 +32,7 @@ This project focuses on recognizing wildlife animal behavior in unstructured env
 
 ## 📂 Project Structure  
 ```
-├── app.py
+├── WildlifeDashboard.py   # Main Streamlit app
 ├── model/
 ├── data/
 ├── utils/
@@ -41,8 +44,8 @@ This project focuses on recognizing wildlife animal behavior in unstructured env
 
 ### 1. Clone the repository  
 ```
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/karava22/Wildlife-Behavior-AI-Command-Center.git
+cd Wildlife-Behavior-AI-Command-Center
 ```
 
 ### 2. Create virtual environment  
@@ -59,7 +62,7 @@ pip install -r requirements.txt
 
 ## ▶️ Run the Application  
 ```
-streamlit run app.py
+streamlit run WildlifeDashboard.py
 ```
 
 ## 📦 Requirements  
