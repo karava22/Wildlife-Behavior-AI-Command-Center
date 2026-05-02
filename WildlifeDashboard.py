@@ -81,7 +81,7 @@ def save_detection(filename, behavior, confidence):
 # --- 5. STREAMLIT UI ---
 st.title("🐾 Wildlife Behavior AI Command Center")
 
-tab1, tab2, tab3 = st.tabs(["🔍 Detection", "📊 Analytics (PPT Ready)", "📜 History Log"])
+tab1, tab2, tab3 = st.tabs(["🔍 Detection", "📊 Analytics ", "📜 History Log"])
 
 # --- TAB 1: DETECTION ---
 with tab1:
