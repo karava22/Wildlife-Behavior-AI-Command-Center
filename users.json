@@ -1,0 +1,18 @@
+{
+  "karavaanushareddy@gmail.com": {
+    "full_name": "Karava Anusha Reddy",
+    "email": "karavaanushareddy@gmail.com",
+    "password_hash": "be06fc848b01754941d4e023e3d42a0f0215849a4f1c6e9357d4ed7fd502e5fb",
+    "salt": "1f546d1d598e4dc3f245dbd2d826d582",
+    "role": "Student",
+    "created_at": "2026-05-07 19:51:22"
+  },
+  "anushareddykarava@gmail.com": {
+    "full_name": "Karava Anusha Reddy",
+    "email": "anushareddykarava@gmail.com",
+    "password_hash": "ab2e31c544900cdbd58db03ec25f5a9350fc9b587351f897f4e32b5adea2e5b5",
+    "salt": "deb5f11241afedf0f14649c033651701",
+    "role": "Student",
+    "created_at": "2026-05-07 20:21:19"
+  }
+}
